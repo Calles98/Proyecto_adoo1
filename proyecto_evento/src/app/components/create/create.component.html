@@ -1,0 +1,83 @@
+<div class="container" *ngIf="event">
+    <h2>{{title}}</h2>
+
+    <div class="message success" *ngIf="status == 'success'">
+		El evento se ha creado correctamente, puedes <a [routerLink]="['/event', event._id]">verlo aquí</a>
+	</div>
+
+	<div class="message failed" *ngIf="status == 'failed'">
+		El proyecto NO SE HA PODIDO CREAR
+	</div>
+
+	<form #eventForm="ngForm" (ngSubmit)="onSubmit(eventForm)">
+		<p>
+			<label for="name">Nombre</label>
+			<input type="text" name="name" #name="ngModel" [(ngModel)]="event.name" required />
+			<span class="form_error" *ngIf="name.touched && !name.valid">
+				* Este campo es obligatorio
+			</span>
+		</p>
+
+        <p>
+			<label for="professor">Profesor</label>
+			<input type="text" name="professor" #professor="ngModel" [(ngModel)]="event.professor" required />
+			<span class="form_error" *ngIf="professor.touched && !professor.valid">
+				* Este campo es obligatorio
+			</span>
+		</p>
+
+    
+			<label for="typeEvent">Tipo de evento</label>
+            <div class="select-dropdown">
+                <select name="typeEvent" #typeEvent="ngModel" [(ngModel)]="event.typeEvent" required >
+                    <option value="curso">Curso</option>
+                    <option value="taller">Taller</option>
+                    <option value="diplomado">Diplomado</option>
+                    <option value="programaEspecial">Programa Especial</option>
+    
+                </select>
+            </div>
+			<span class="form_error" *ngIf="name.touched && !name.valid">
+				* Este campo es obligatorio
+			</span>
+		
+
+        <p>
+			<label for="startDate">Fecha de Inicio</label>
+			<input type="date" name="startDate" #startDate="ngModel" [(ngModel)]="event.startDate" required />
+			<span class="form_error" *ngIf="startDate.touched && !startDate.valid">
+				* Este campo es obligatorio
+			</span>
+		</p>
+
+        <p>
+			<label for="endDate">Fecha final</label>
+			<input type="date" name="endDate" #endDate="ngModel" [(ngModel)]="event.endDate" required />
+			<span class="form_error" *ngIf="endDate.touched && !endDate.valid">
+				* Este campo es obligatorio
+			</span>
+		</p>
+
+        <p>
+			<label for="duration">Duración por sesión</label>
+			<input type="number" name="duration" #duration="ngModel" [(ngModel)]="event.duration" required />
+			<span class="form_error" *ngIf="duration.touched && !duration.valid">
+				* Este campo es obligatorio
+			</span>
+		</p>
+
+        <p>
+			<label for="participants">Número de Participantes</label>
+			<input type="number" name="participants" #participants="ngModel" [(ngModel)]="event.participants" required />
+			<span class="form_error" *ngIf="participants.touched && !participants.valid">
+				* Este campo es obligatorio
+			</span>
+		</p>
+
+		<input type="submit" value="Enviar" [disabled]="!eventForm.form.valid" />
+	</form>
+
+
+
+
+</div>

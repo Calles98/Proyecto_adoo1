@@ -1,0 +1,12 @@
+<div class="container">
+    <h2>Eventos Pendientes de Aprobar</h2>
+
+    <ul>
+        <li *ngFor="let event of events" class="event">
+            <a *ngIf="event.aproved == false" [routerLink]="['/evento', event._id]">
+                <h3>{{event.name}}</h3>
+                <p>Professor: {{event.professor}}</p>
+            </a>
+        </li>
+    </ul>
+</div>

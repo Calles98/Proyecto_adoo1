@@ -1,0 +1,16 @@
+<header>
+  <ul>
+    <li><a [routerLink]="['']" [routerLinkActive]="['actived']">Home</a></li>
+    <li><a [routerLink]="['/eventos']" [routerLinkActive]="['actived']">Eventos Pendientes</a></li>
+    <li><a [routerLink]="['/eventos-aprobados']" [routerLinkActive]="['actived']">Eventos Aprobados</a></li>
+    <li><a [routerLink]="['/crear-solicitud']" [routerLinkActive]="['actived']">Solicitar Evento</a></li>
+  </ul>
+</header>
+
+<section id="content">
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+  Proyecto adoo
+</footer>

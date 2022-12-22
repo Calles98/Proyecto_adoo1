@@ -1,0 +1,336 @@
+/* Generales */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: rgb(218, 214, 214);
+    background-attachment: fixed;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+/*header*/
+header{
+    display: block;
+    width: 100%;
+    height: 94px;
+    background: rgba(169, 200, 239, 1);
+    position: fixed;
+    text-transform: capitalize;
+}
+header ul{
+    display: block;
+    width: 100%;
+    height: inherit;
+    margin: 0px auto;
+
+}
+
+header ul li{
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 90px;
+}
+
+header a{
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: inherit;
+    text-decoration: none;
+    color: white;
+    transition: all 300ms;
+}
+header a:hover,
+.activated{
+    background: rgba(0, 0, 0, .8);
+   
+}
+
+/* Contenedor principal */
+
+#content{
+    min-height: 600px;
+    height: auto;
+    width: 75%;
+    margin: 0px auto;
+    box-shadow: 0px 0px 40px black;
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;
+    background: rgba(255, 255, 255, 0.7);
+    padding-top: 120px;
+}
+
+
+/* Pie de página */
+footer{
+    width: 75%;
+    margin: 0px auto;
+    padding-top: 15px;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: capitalize;
+}
+
+/* Sobre mi */
+#title{
+    width: 70%;
+    margin:0px auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+#title h1{
+    font-family: "finger";
+    font-size: 60px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+
+}
+
+#title h2{
+    font-size: 25px;
+    color: gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*Contenedor*/ 
+.container{
+    padding: 50px;
+    padding-top: 10px;
+}
+
+.container h2{
+    display: block;
+    font-size: 50px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+/*Formulario*/
+
+form{
+    width: 50%;
+}
+
+form label{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+form input[type="text"],
+form input[type="date"],
+form input[type="number"]
+{
+    width: 40%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+form .select-dropdown,
+form .select-dropdown * {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+form .select-dropdown {
+  position: relative;
+  background-color: #E6E6E6;
+  width: 44%;
+  border-radius: 4px;
+}
+form .select-dropdown select {
+  font-size: 1rem;
+  font-weight: normal;
+  max-width: 100%;
+  padding: 8px 24px 8px 10px;
+  border: none;
+  background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  appearance: none;
+}
+form .select-dropdown select:active, .select-dropdown select:focus {
+  outline: none;
+  box-shadow: none;
+}
+form .select-dropdown:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  border-top: 5px solid #aaa;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+form input[type="submit"]{
+    display: block;
+    font-size: 28px;
+    padding: 20px;
+    width: 170px;
+    margin-top: 30px;
+    color: white;
+    background: rgba(53, 103, 164, 1);
+    border: 1px solid rgba(13, 67, 133, 1);
+    cursor: pointer;
+}
+
+form input[disabled]{
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+form input[type="submit"]:hover{
+    display: block;
+    font-size: 20px;
+    padding: 25px;
+    width: 170px;
+    margin-top: 30px;
+    color: white;
+    background: rgba(53, 103, 164, 0.8);
+    border: 1px solid rgba(13, 67, 133, 1);
+    cursor: pointer;
+}
+
+.form_error{
+    padding: 5px;
+    color: red;
+    margin: 10px;
+    float: right;
+}
+
+.success{
+    background: green;
+    color: white;
+    border-radius: 6%;
+}
+
+.failed{
+    background: red;
+    color: white;
+}
+
+/*listado eventos*/
+
+.event{
+    list-style: none;
+    display: block;
+    float: left;
+    margin: 20px;
+
+}
+
+.event p{
+    text-transform: capitalize;
+}
+
+.event h3{
+    text-align: center;
+}
+
+.event a{
+    text-decoration: none;
+    color: black;
+}
+
+/*Detalles de evento*/
+.container .data{
+    float: left;
+    width: 48%;
+    margin-left: 48px;
+    font-size: 30px;
+    padding: 30px;
+}
+
+.button-approve,
+.button-decline{
+    width: 23%;
+    float:left;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    height: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 13px;
+    padding-bottom: 20px;
+}
+
+.button-approve{
+    background-color: green;
+}
+
+.button-decline{
+    background-color: red;
+}
+
+.duration-yes,
+.duration-no{
+    margin: 1px;
+    float: right;
+    font-size: 12px;
+   
+}
+
+.duration-yes{
+    color: green;
+}
+
+.duration-no{
+    color: red;
+}
+
+.duration{
+ display: inline;
+
+}
+
+.message-approve{
+    width: auto;
+    float:left;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    height: auto;
+    margin-top: 20px;
+    padding: 20px;
+    padding-bottom: 20px;
+    background-color: green;
+    border-radius: 4%;
+}
+
+.button-borrar{
+    width: 211px;
+    float:left;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    height: auto;
+    margin-top: 20px;
+    padding: 20px;
+    padding-bottom: 20px;
+    background-color: red;
+    border-radius: 4%;
+    cursor: pointer;
+}

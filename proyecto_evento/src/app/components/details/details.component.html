@@ -1,0 +1,61 @@
+<div class="container" *ngIf="event">
+
+    <div class="data">
+        <h1>{{event.name}}</h1>
+        <p>Profesor: {{event.professor}}</p>
+        <p>Tipo de evento: {{event.typeEvent}}</p>
+        <p>Incicio del evento: {{event.startDate}}</p>
+        <p>Fin del evento: {{event.endDate}}</p>
+        <p>
+            <span  class="duration" *ngIf="event.duration <= 6  && event.duration >= 1; else noCumpleDur">
+                <p *ngIf="event.aproved == false" class="duration-yes">* Si cumple con los requisitos</p>
+                Duración por sesión: {{event.duration}} Hrs
+            </span>
+            <ng-template #noCumpleDur>
+                <span class="duration">
+                    <p *ngIf="event.aproved == false" class="duration-no">* No cumple con los requisitos</p>
+                    Duración por sesión: {{event.duration}} Hrs
+                </span>
+
+            </ng-template>
+      
+            
+        </p>    
+
+        <p>
+            <span  class="duration" *ngIf="event.participants <= 60  && event.participants >= 20; else noCumplePart">
+                <p *ngIf="event.aproved == false" class="duration-yes">* Si cumple con los requisitos</p>
+                Participantes: {{event.participants}} 
+            </span>
+            <ng-template #noCumplePart>
+                <span class="duration">
+                    <p *ngIf="event.aproved == false" class="duration-no">* No cumple con los requisitos</p>
+                    particpantes: {{event.participants}} 
+                </span>
+
+            </ng-template>
+      
+            
+        </p>    
+   
+    
+        <p *ngIf="event.aproved == false">
+            <a (click)="aprobarEvento(true)"  [routerLink]="['/eventos-aprobados']" class="button-approve" >Aprobar</a>
+        </p>
+
+        <p *ngIf="event.aproved == false">
+            <a (click)="borrarEvento(event._id)" class="button-decline">Declinar</a>
+        </p>
+
+        <p *ngIf="event.aproved==true">
+            <span class="message-approve">Evento Aprobado</span>
+            <a (click)="borrarEvento(event._id)" class="button-borrar">Borrar Evento</a>
+        </p>
+
+        <!-- <p *ngIf="event.aproved == true">
+            <p class="evento-aprobado">Evento Aprobado</p>
+        </p> -->
+
+
+    </div>
+</div>
